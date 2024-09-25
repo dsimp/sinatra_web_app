@@ -1,12 +1,10 @@
 
-Here's a concise and clear README for your **City Weather Search** Ruby web app:
 
 ---
 
 # City Weather Search
 
-A simple Ruby/Sinatra web app that fetches and displays real-time weather data based on user input. The app suggests popular destinations as you type and dynamically updates the background based on the weather conditions.
-
+A simple Ruby/Sinatra web app that fetches and displays real-time weather data based on user input. 
 ## Features
 - Search for current weather by city.
 - Pre-populated suggestions for popular locations.
