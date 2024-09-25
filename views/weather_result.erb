@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather in <%= city %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/images/<%= background_image(weather_text) %>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .weather-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    h1, p {
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather in <%= city %></h1>
+    <p>With a temp of <%= temp %>°C, it's looking <%= weather_text %> in <%= city %>.</p>
+  </div>
+</body>
+</html>

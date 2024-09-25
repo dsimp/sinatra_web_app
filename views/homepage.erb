@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your City</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .city-list button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .city-list button:hover {
+      background-color: #0056b3;
+    }
+    .search-bar {
+      margin: 20px 0;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Select a City</h1>
+    <div class="city-list">
+      <% cities.each do |city| %>
+        <form action="/api_request" method="get">
+          <input type="hidden" name="user_input" value="<%= city %>">
+          <button type="submit"><%= city %></button>
+        </form>
+      <% end %>
+    </div>
+
+    <div class="search-bar">
+      <form action="/api_request" method="get">
+        <input type="text" name="user_input" placeholder="Or enter a city...">
+        <input type="submit" value="Get Weather">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
